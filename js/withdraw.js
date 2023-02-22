@@ -3,6 +3,7 @@ document.getElementById("btnWith").addEventListener("click", function () {
   const withdrawFiled = document.getElementById("withFiled");
   const withFiled = withdrawFiled.value;
   const withFiledString = parseFloat(withFiled);
+  withdrawFiled.value = "";
   // STEP2
   const WithCash = document.getElementById("WithCash");
   const WithCashText = WithCash.innerText;
@@ -22,7 +23,7 @@ document.getElementById("btnWith").addEventListener("click", function () {
   WithCash.innerText = withdrawCash;
   // STEP5
   const totalBalance = balanceCashTotal - withFiledString;
-  withdrawFiled.value = "";
+ 
 
   balanceCash.innerText = totalBalance;
 });
