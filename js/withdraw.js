@@ -1,23 +1,27 @@
-document.getElementById('btnWith').addEventListener('click',function(){
-    const withdrawFiled=document.getElementById('withFiled');
-    const withFiled=withdrawFiled.value;
-    const withFiledString=parseFloat(withFiled);
-    
-    const WithCash=document.getElementById('WithCash');
-    const WithCashText=WithCash.innerText;
-    const WithCashString=parseFloat(WithCashText);
-    
-    const withdrawCash= withFiledString + WithCashString
-    console.log(withdrawCash)
+document.getElementById("btnWith").addEventListener("click", function () {
+  const withdrawFiled = document.getElementById("withFiled");
+  const withFiled = withdrawFiled.value;
+  const withFiledString = parseFloat(withFiled);
 
-    WithCash.innerText=withdrawCash;
+  const WithCash = document.getElementById("WithCash");
+  const WithCashText = WithCash.innerText;
+  const WithCashString = parseFloat(WithCashText);
 
-    const balanceCash = document.getElementById("balanceCash");
-    const balanceCashString = balanceCash.innerText;
-    const balanceCashTotal = parseFloat(balanceCashString);
+  const withdrawCash = withFiledString + WithCashString;
+  console.log(withdrawCash);
 
-    const totalBalance=balanceCashTotal - withdrawCash;
+  WithCash.innerText = withdrawCash;
 
-    balanceCash.innerText=totalBalance;
-    withdrawFiled.value='';
-})
+  const balanceCash = document.getElementById("balanceCash");
+  const balanceCashString = balanceCash.innerText;
+  const balanceCashTotal = parseFloat(balanceCashString);
+
+  const totalBalance = balanceCashTotal - withdrawCash;
+  withdrawFiled.value = "";
+
+  if (withdrawCash > totalBalance) {
+    alert("Sorry!!");
+    return;
+  }
+  balanceCash.innerText = totalBalance;
+});

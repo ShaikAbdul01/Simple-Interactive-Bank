@@ -12,11 +12,11 @@ const depo = document
     const dipoCashTotal = parseFloat(dipoCashTotalString);
 
     // Deposit + Please Deposit = total
-    const currentDipoCashTotal =dipoCashTotal + dipoAmaount;
+    const currentDipoCashTotal = dipoCashTotal + dipoAmaount;
 
     dipoCash.innerText = currentDipoCashTotal;
 
-    // Balance 
+    // Balance
     const balanceCash = document.getElementById("balanceCash");
     const balanceCashString = balanceCash.innerText;
     const balanceCashTotal = parseFloat(balanceCashString);
@@ -24,7 +24,7 @@ const depo = document
     //Balance + total
     const totalBalance = balanceCashTotal + currentDipoCashTotal;
 
-    balanceCash.innerText=totalBalance;
+    balanceCash.innerText = totalBalance;
     console.log(totalBalance);
     depoFiled.value = "";
   });
