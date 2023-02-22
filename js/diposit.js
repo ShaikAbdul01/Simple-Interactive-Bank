@@ -2,8 +2,8 @@ const depo = document
   .getElementById("btnDepo")
   .addEventListener("click", function () {
     // Deposit
-    const depoFiled = document.getElementById("depoFiled");
-    const dipoAmaountString = depoFiled.value;
+    const depositFiled = document.getElementById("depoFiled");
+    const dipoAmaountString = depositFiled.value;
     const dipoAmaount = parseFloat(dipoAmaountString);
 
     // Please Deposit
@@ -22,9 +22,8 @@ const depo = document
     const balanceCashTotal = parseFloat(balanceCashString);
 
     //Balance + total
-    const totalBalance = balanceCashTotal + currentDipoCashTotal;
-
+    const totalBalance = balanceCashTotal + dipoAmaount;
     balanceCash.innerText = totalBalance;
     console.log(totalBalance);
-    depoFiled.value = "";
+    depositFiled.value = "";
   });
